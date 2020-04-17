@@ -11,10 +11,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SomeBusinessTest {
 
 	@Test
-	void contextLoads() {
+	void calcSum() {
         SomeBusinessImpl business = new SomeBusinessImpl();
         int actualResult = business.calculateSum(new int[] {1,2,3});
         int expectedResult = 8;
+        assertEquals(expectedResult, actualResult);
+    }
+    
+
+    @Test
+	void calcSumEmpty() {
+        SomeBusinessImpl business = new SomeBusinessImpl();
+        int actualResult = business.calculateSum(new int[] {});
+        int expectedResult = 0;
         assertEquals(expectedResult, actualResult);
 	}
 
