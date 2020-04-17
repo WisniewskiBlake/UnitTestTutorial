@@ -14,7 +14,7 @@ class SomeBusinessTest {
 	void calcSum() {
         SomeBusinessImpl business = new SomeBusinessImpl();
         int actualResult = business.calculateSum(new int[] {1,2,3});
-        int expectedResult = 8;
+        int expectedResult = 6;
         assertEquals(expectedResult, actualResult);
     }
     
