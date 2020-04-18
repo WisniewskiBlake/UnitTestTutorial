@@ -1,5 +1,7 @@
 package com.codewizard.unittesttutorial.Business;
 
+import com.codewizard.unittesttutorial.Data.SomeDataService;
+
 public class SomeBusinessImpl {
 
     SomeDataService someDataService;
@@ -11,5 +13,11 @@ public class SomeBusinessImpl {
             sum += value;
         }
         return sum;
+    }
+
+    
+
+    public void setSomeDataService(SomeDataService someDataService) {
+        this.someDataService = someDataService;
     }
 }
