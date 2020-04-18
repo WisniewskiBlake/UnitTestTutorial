@@ -17,7 +17,7 @@ class SomeBusinessTest {
         int expectedResult = 6;
         assertEquals(expectedResult, actualResult);
     }
-    
+         
 
     @Test
 	void calcSumEmpty() {
