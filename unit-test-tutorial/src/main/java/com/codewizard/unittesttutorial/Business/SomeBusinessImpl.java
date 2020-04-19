@@ -9,6 +9,8 @@ public class SomeBusinessImpl {
     public int calcSumUsingDataService() {
         int sum = 0;
         int[] data = someDataService.retrieveAllData();
+        int quarter;
+        int half;
         for(int value:data) {
             sum += value;
         }
