@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 public class BusinessMockTest {
     @Test
-	void calcSumUsingDataService_oneValue() {
+	void calcSumUsingDataService_basic() {
         SomeBusinessImpl business = new SomeBusinessImpl();
         //mock will return retrieveAllData new int[] {1, 2, 3}
         SomeDataService dataServiceMock = mock(SomeDataService.class);
@@ -23,12 +23,29 @@ public class BusinessMockTest {
         assertEquals(expectedResult, actualResult);
     }
     
-    // @Test
-	// void calcSumUsingDataService_empty() {
-    //     SomeBusinessImpl business = new SomeBusinessImpl();
-    //     business.setSomeDataService(new SomeDataServiceStub());
-    //     int actualResult = business.calcSumUsingDataService();
-    //     int expectedResult = 0;
-    //     assertEquals(expectedResult, actualResult);
-    // }
+    @Test
+	void calcSumUsingDataService_empty() {
+        SomeBusinessImpl business = new SomeBusinessImpl();
+        //mock will return retrieveAllData new int[] {1, 2, 3}
+        SomeDataService dataServiceMock = mock(SomeDataService.class);
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1, 2, 3});
+
+        business.setSomeDataService(dataServiceMock);
+        int actualResult = business.calcSumUsingDataService();
+        int expectedResult = 6;
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+	void calcSumUsingDataService_boneValue() {
+        SomeBusinessImpl business = new SomeBusinessImpl();
+        //mock will return retrieveAllData new int[] {1, 2, 3}
+        SomeDataService dataServiceMock = mock(SomeDataService.class);
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1, 2, 3});
+
+        business.setSomeDataService(dataServiceMock);
+        int actualResult = business.calcSumUsingDataService();
+        int expectedResult = 6;
+        assertEquals(expectedResult, actualResult);
+    }
 }
