@@ -7,20 +7,18 @@ import static org.mockito.Mockito.when;
 import com.codewizard.unittesttutorial.Business.SomeBusinessImpl;
 import com.codewizard.unittesttutorial.Data.SomeDataService;
 
-import org.mockito.junit.MockitoJUnitRunner;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-
-
-@ExtendWith(MockitoJUnitRunner.class)
-public class BusinessMockTest {
+@ExtendWith(MockitoExtension.class)
+class BusinessMockTest {
 
     @InjectMocks    
-    SomeBusinessImpl business = new SomeBusinessImpl();
+    SomeBusinessImpl business;
 
     //mock will return retrieveAllData new int[] {1, 2, 3}
     @Mock
