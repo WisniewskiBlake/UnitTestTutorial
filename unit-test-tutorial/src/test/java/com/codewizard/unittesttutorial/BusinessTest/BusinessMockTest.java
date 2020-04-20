@@ -23,12 +23,12 @@ public class BusinessMockTest {
         assertEquals(expectedResult, actualResult);
     }
     
-    @Test
-	void calcSumUsingDataService_empty() {
-        SomeBusinessImpl business = new SomeBusinessImpl();
-        business.setSomeDataService(new SomeDataServiceStub());
-        int actualResult = business.calcSumUsingDataService();
-        int expectedResult = 0;
-        assertEquals(expectedResult, actualResult);
-    }
+    // @Test
+	// void calcSumUsingDataService_empty() {
+    //     SomeBusinessImpl business = new SomeBusinessImpl();
+    //     business.setSomeDataService(new SomeDataServiceStub());
+    //     int actualResult = business.calcSumUsingDataService();
+    //     int expectedResult = 0;
+    //     assertEquals(expectedResult, actualResult);
+    // }
 }
