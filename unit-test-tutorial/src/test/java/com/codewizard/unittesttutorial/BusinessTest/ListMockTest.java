@@ -11,7 +11,7 @@ import org.mockito.Mockito;
 
 public class ListMockTest {
 
-    List mock = Mockito.mock(List.class);
+    List<String> mock = Mockito.mock(List.class);
 
     @Test
     public void returnSingleVal() {        
@@ -41,11 +41,10 @@ public class ListMockTest {
         assertEquals("Code Wizard", mock.get(1));         
     }
 
+    //we want to get a value and verify the value is obtained using mock.get
     @Test
     public void usingVerification() {        
-        when(mock.get(anyInt())).thenReturn("Code Wizard");
-        assertEquals("Code Wizard", mock.get(0));
-        assertEquals("Code Wizard", mock.get(1));         
+        String value = mock.get(0);         
     }
 
 }
