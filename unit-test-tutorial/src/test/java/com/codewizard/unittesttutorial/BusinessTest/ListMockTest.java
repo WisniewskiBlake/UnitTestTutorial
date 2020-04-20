@@ -28,7 +28,8 @@ public class ListMockTest {
     @Test
     public void returnWithParams() {        
         when(mock.get(0)).thenReturn("Code Wizard");
-        assertEquals("Code Wizard", 0);        
+        assertEquals("Code Wizard", mock.get(0));
+        assertEquals(null, mock.get(1));         
     }
 
 }
