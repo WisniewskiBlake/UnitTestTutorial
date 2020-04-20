@@ -11,10 +11,11 @@ import org.mockito.Mockito;
 public class ListMockTest {
 
     @Test
-    public void test() {
+    public void returnMultiValues() {
         List mock = Mockito.mock(List.class);
-        when(mock.size()).thenReturn(5);
+        when(mock.size()).thenReturn(5).thenReturn(10);
         assertEquals(5, mock.size());
+        assertEquals(10, mock.size());
     }
 
 }
