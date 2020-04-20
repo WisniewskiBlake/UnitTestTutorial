@@ -33,11 +33,19 @@ public class ListMockTest {
         assertEquals(null, mock.get(1));         
     }
 
+    //anything that is an integer will return code wizard
     @Test
     public void returnWithGenericParams() {        
         when(mock.get(anyInt())).thenReturn("Code Wizard");
         assertEquals("Code Wizard", mock.get(0));
-        assertEquals(null, mock.get(1));         
+        assertEquals("Code Wizard", mock.get(1));         
+    }
+
+    @Test
+    public void usingVerification() {        
+        when(mock.get(anyInt())).thenReturn("Code Wizard");
+        assertEquals("Code Wizard", mock.get(0));
+        assertEquals("Code Wizard", mock.get(1));         
     }
 
 }
