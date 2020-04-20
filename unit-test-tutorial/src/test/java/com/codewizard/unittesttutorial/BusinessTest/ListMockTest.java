@@ -2,6 +2,8 @@ package com.codewizard.unittesttutorial.BusinessTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -44,7 +46,10 @@ public class ListMockTest {
     //we want to get a value and verify the value is obtained using mock.get
     @Test
     public void usingVerification() {        
-        String value = mock.get(0);         
+        String value = mock.get(0);
+        verify(mock).get(0);
+        verify(mock).get(anyInt());
+        verify(mock, times(1)).get(anyInt());         
     }
 
 }
