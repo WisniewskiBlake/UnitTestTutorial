@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import com.codewizard.unittesttutorial.Business.SomeBusinessImpl;
 import com.codewizard.unittesttutorial.Data.SomeDataService;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class BusinessMockTest {
@@ -15,11 +16,16 @@ public class BusinessMockTest {
     //mock will return retrieveAllData new int[] {1, 2, 3}
     SomeDataService dataServiceMock = mock(SomeDataService.class);
 
+    @BeforeAll
+    public void before() {
+        business.setSomeDataService(dataServiceMock);
+    }
+
     @Test
 	void calcSumUsingDataService_basic() {      
         when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1, 2, 3});
 
-        business.setSomeDataService(dataServiceMock);
+        before();
         int actualResult = business.calcSumUsingDataService();
         int expectedResult = 6;
         assertEquals(expectedResult, actualResult);
@@ -29,7 +35,7 @@ public class BusinessMockTest {
 	void calcSumUsingDataService_empty() {        
         when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { });
 
-        business.setSomeDataService(dataServiceMock);
+        before();
         int actualResult = business.calcSumUsingDataService();
         int expectedResult = 0;
         assertEquals(expectedResult, actualResult);
@@ -39,7 +45,7 @@ public class BusinessMockTest {
 	void calcSumUsingDataService_oneValue() {        
         when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {2});
 
-        business.setSomeDataService(dataServiceMock);
+        before();
         int actualResult = business.calcSumUsingDataService();
         int expectedResult = 2;
         assertEquals(expectedResult, actualResult);
