@@ -36,18 +36,17 @@ public class BusinessMockTest {
         when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { });
 
         before();
-        int actualResult = business.calcSumUsingDataService();
-        int expectedResult = 0;
-        assertEquals(expectedResult, actualResult);
+        int actualResult = business.calcSumUsingDataService();        
+        assertEquals(0, actualResult);
     }
 
     @Test
 	void calcSumUsingDataService_oneValue() {        
-        when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {2});
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {5});
 
         before();
         int actualResult = business.calcSumUsingDataService();
-        int expectedResult = 2;
+        int expectedResult = 5;
         assertEquals(expectedResult, actualResult);
     }
 }
