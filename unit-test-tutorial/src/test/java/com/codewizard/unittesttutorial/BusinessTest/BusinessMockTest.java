@@ -2,6 +2,7 @@ package com.codewizard.unittesttutorial.BusinessTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.mockito.Mockito.when;
 
 import com.codewizard.unittesttutorial.Business.SomeBusinessImpl;
 import com.codewizard.unittesttutorial.Data.SomeDataService;
@@ -9,11 +10,13 @@ import com.codewizard.unittesttutorial.Data.SomeDataService;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 
-@RunWith(MockitoJUnitRunner.class)
+
+@ExtendWith(MockitoJUnitRunner.class)
 public class BusinessMockTest {
 
     @InjectMocks    
