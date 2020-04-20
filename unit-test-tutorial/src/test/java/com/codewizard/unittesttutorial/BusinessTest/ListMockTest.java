@@ -10,12 +10,25 @@ import org.mockito.Mockito;
 
 public class ListMockTest {
 
+    List mock = Mockito.mock(List.class);
+
     @Test
-    public void returnMultiValues() {
-        List mock = Mockito.mock(List.class);
+    public void returnSingleVal() {        
+        when(mock.size()).thenReturn(5);
+        assertEquals(5, mock.size());        
+    }
+
+    @Test
+    public void returnMultiVal() {        
         when(mock.size()).thenReturn(5).thenReturn(10);
         assertEquals(5, mock.size());
         assertEquals(10, mock.size());
+    }
+
+    @Test
+    public void returnWithParams() {        
+        when(mock.size()).thenReturn(5);
+        assertEquals(5, mock.size());        
     }
 
 }
