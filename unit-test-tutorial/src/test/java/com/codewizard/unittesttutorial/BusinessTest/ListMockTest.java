@@ -81,12 +81,12 @@ public class ListMockTest {
         
         //verification
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-        verify(mock).add(captor.capture());
+        verify(mock, times(2)).add(captor.capture());
 
         List<String> allValues = captor.getAllValues();
 
-        assertEquals("SomeString1", allValues.get(0));
-        assertEquals("SomeString2", allValues.get(1));
+        assertEquals("Some String1", allValues.get(0));
+        assertEquals("Some String2", allValues.get(1));
     }
 
 }
