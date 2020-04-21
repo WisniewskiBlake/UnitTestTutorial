@@ -69,6 +69,20 @@ public class ListMockTest {
         //verification
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
         verify(mock).add(captor.capture());
+
+        assertEquals("SomeString", captor.getValue());
+    }
+
+    //how to capture multiple arguments for more than 1 method call 
+    @Test
+    public void multipleArgumentCapturing() {        
+        mock.add("Some String"); 
+        
+        //verification
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(mock).add(captor.capture());
+
+        assertEquals("SomeString", captor.getValue());
     }
 
 }
