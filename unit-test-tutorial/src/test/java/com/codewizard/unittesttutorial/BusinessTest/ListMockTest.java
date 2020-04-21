@@ -60,4 +60,10 @@ public class ListMockTest {
         verify(mock, never()).get(2);         
     }
 
+    //how to capture an argument for verification test
+    @Test
+    public void argumentCapturing() {        
+        mock.add("Some String");         
+    }
+
 }
