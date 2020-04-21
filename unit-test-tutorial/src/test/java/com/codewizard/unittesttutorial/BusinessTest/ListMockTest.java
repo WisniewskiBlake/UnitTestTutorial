@@ -90,10 +90,12 @@ public class ListMockTest {
         assertEquals("Some String2", allValues.get(1));
     }
 
+    //mocking doesnt retain behavior of the original class
     @Test
     public void spying() {        
         ArrayList arrayListMock = Mockito.mock(ArrayList.class);
-        
+        System.out.println(arrayListMock.get(0)); //null
+        System.out.println(arrayListMock.get(0)); //0
     }
 
 }
