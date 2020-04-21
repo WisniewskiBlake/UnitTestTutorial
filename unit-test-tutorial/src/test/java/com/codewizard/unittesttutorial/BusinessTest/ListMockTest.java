@@ -12,6 +12,7 @@ import static org.mockito.Mockito.when;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 public class ListMockTest {
@@ -63,7 +64,11 @@ public class ListMockTest {
     //how to capture an argument for verification test
     @Test
     public void argumentCapturing() {        
-        mock.add("Some String");         
+        mock.add("Some String"); 
+        
+        //verification
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(mock).add(captor.capture());
     }
 
 }
