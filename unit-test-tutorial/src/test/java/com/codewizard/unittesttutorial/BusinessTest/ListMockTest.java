@@ -9,6 +9,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -87,6 +88,12 @@ public class ListMockTest {
 
         assertEquals("Some String1", allValues.get(0));
         assertEquals("Some String2", allValues.get(1));
+    }
+
+    @Test
+    public void spying() {        
+        ArrayList arrayListMock = Mockito.mock(ArrayList.class);
+        
     }
 
 }
