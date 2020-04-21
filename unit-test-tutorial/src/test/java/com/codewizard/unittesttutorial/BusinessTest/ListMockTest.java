@@ -46,9 +46,12 @@ public class ListMockTest {
     //we want to get a value and verify the value is obtained using mock.get
     @Test
     public void usingVerification() {        
-        String value = mock.get(0);
+        String value1 = mock.get(0);
+        String value2 = mock.get(1);
+
         verify(mock).get(0);
         verify(mock).get(anyInt());
+        //verify .get() is called once
         verify(mock, times(1)).get(anyInt());         
     }
 
