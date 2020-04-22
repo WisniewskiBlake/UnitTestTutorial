@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-UnitTestingApplication<unit-test-tutorial>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.codewizard.unittesttutorial.UnitTestingApplication",
+            "projectName": "unit-test-tutorial",
+            "args": ""
+        }
+    ]
+}
