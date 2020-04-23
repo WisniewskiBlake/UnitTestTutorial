@@ -33,7 +33,7 @@ public class HelloWorldControllerTest {
 
         
         //verifying "Hello World"
-        assertEquals("Hello World", result.getResponse().toString());
+        assertEquals("Hello World", result.getResponse().getContentAsString());
     }
 
 }
