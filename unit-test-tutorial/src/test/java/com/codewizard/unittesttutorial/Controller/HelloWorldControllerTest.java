@@ -21,7 +21,7 @@ public class HelloWorldControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void helloWorld_basic() {
+    public void helloWorld_basic() throws Exception {
 
         RequestBuilder request = MockMvcRequestBuilders
             .get("/hello-world")
