@@ -1,5 +1,7 @@
 package com.codewizard.unittesttutorial;
 
+import com.codewizard.unittesttutorial.Model.Item;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemController {
 
     @GetMapping("/dummy-item")
-    public Item helloWorld() {
+    public Item dummyItem() {
         return new Item(1, "Ball", 10, 100);
     }    
 
