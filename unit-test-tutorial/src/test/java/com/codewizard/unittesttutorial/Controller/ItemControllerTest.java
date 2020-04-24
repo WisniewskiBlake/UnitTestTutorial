@@ -29,14 +29,14 @@ public class ItemControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void helloWorld_basic() throws Exception {
+    public void dummyItem_basic() throws Exception {
         //calling GET /hello-world application/json
-        RequestBuilder request = MockMvcRequestBuilders.get("/hello-world")
+        RequestBuilder request = MockMvcRequestBuilders.get("/dummy-item")
             .accept(MediaType.APPLICATION_JSON);
         ResultMatcher ok = MockMvcResultMatchers.status()
                                             .isOk();
         ResultMatcher content = MockMvcResultMatchers.content()
-            .string("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
+            .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
@@ -44,7 +44,7 @@ public class ItemControllerTest {
         
         
         //verifying "Hello World"
-        assertEquals("Hello World", result.getResponse().getContentAsString());
+        // assertEquals("Hello World", result.getResponse().getContentAsString());
     }
 
 }
