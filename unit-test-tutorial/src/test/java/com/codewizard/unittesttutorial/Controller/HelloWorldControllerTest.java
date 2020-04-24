@@ -35,7 +35,7 @@ public class HelloWorldControllerTest {
         ResultMatcher ok = MockMvcResultMatchers.status()
                                             .isOk();
         ResultMatcher content = MockMvcResultMatchers.content()
-            .json("Hello World");
+            .string("Hello World");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
