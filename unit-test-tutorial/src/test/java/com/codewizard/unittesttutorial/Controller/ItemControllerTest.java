@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.regex.MatchResult;
 
 import com.codewizard.unittesttutorial.HelloWorldController;
+import com.codewizard.unittesttutorial.ItemController;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +22,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(HelloWorldController.class)
+@WebMvcTest(ItemController.class)
 public class ItemControllerTest {
 
     @Autowired
@@ -35,7 +36,7 @@ public class ItemControllerTest {
         ResultMatcher ok = MockMvcResultMatchers.status()
                                             .isOk();
         ResultMatcher content = MockMvcResultMatchers.content()
-            .string("Hello World");
+            .string("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
