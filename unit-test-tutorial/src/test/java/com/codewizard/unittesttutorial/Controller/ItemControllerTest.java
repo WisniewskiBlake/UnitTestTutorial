@@ -35,8 +35,10 @@ public class ItemControllerTest {
             .accept(MediaType.APPLICATION_JSON);
         ResultMatcher ok = MockMvcResultMatchers.status()
                                             .isOk();
+        // ResultMatcher content = MockMvcResultMatchers.content()
+        //     .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
         ResultMatcher content = MockMvcResultMatchers.content()
-            .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
+            .json("{\"id\":1,\"name\":\"Ball\",\"price\":10}");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
