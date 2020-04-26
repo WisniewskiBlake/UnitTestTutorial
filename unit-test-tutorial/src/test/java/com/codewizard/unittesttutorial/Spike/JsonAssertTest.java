@@ -10,7 +10,7 @@ public class JsonAssertTest {
 
     @Test
     public void jsonAssert() throws JSONException {
-        String expectedResponse = "{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}";
+        String expectedResponse = "{\"id\":1,\"name\":\"Ball\"}";
         JSONAssert.assertEquals(expectedResponse, actualResponse, true);
     }
 
