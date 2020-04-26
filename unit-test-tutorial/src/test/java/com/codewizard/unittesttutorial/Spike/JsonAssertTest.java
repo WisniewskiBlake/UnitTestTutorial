@@ -17,7 +17,13 @@ public class JsonAssertTest {
     @Test
     public void jsonAssert_StrictFalse() throws JSONException {
         String expectedResponse = "{\"id\":1, \"name\":\"Ball\", \"price\":10, \"quantity\":100}";
-        JSONAssert.assertEquals(expectedResponse, actualResponse, true);
+        JSONAssert.assertEquals(expectedResponse, actualResponse, false);
+    }
+
+    @Test
+    public void jsonAssert_WithoutEscape() throws JSONException {
+        String expectedResponse = "{id:1, name:Ball, price:10, quantity:100}";
+        JSONAssert.assertEquals(expectedResponse, actualResponse, false);
     }
 
 }
