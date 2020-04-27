@@ -1,11 +1,20 @@
 package com.codewizard.unittesttutorial.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
 public class Item {
 
+    @Id
     int id;
     String name;
     int price;
     int quantity;
+
+    @Transient
+    private int value;
 
     public Item(int id, String name, int price, int quantity) {
         this.id = id;
