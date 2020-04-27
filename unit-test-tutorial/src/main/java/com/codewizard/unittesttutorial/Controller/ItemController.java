@@ -1,5 +1,7 @@
 package com.codewizard.unittesttutorial.Controller;
 
+import java.util.List;
+
 import com.codewizard.unittesttutorial.Business.ItemBusinessService;
 import com.codewizard.unittesttutorial.Model.Item;
 
@@ -21,6 +23,11 @@ public class ItemController {
     @GetMapping("/item-from-business-service")
     public Item itemFromBusinessService() {
         return businessService.retreiveHardcodedItem();
+    }
+
+    @GetMapping("/all-items-from-database")
+    public List<Item> retrieveAllItems() {
+        return businessService.retrieveAllItems();
     }
 
 }

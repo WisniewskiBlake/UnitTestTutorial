@@ -19,8 +19,7 @@ public class ItemBusinessService {
     }
 
     public List<Item> retrieveAllItems() {
-        return repository.findAll();
-        
+        return repository.findAll();        
     }
     
 }
