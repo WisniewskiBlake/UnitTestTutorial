@@ -2,6 +2,9 @@ package com.codewizard.unittesttutorial.Business;
 
 import com.codewizard.unittesttutorial.Model.Item;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ItemBusinessService {
 
     public Item retreiveHardcodedItem() {

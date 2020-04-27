@@ -29,16 +29,16 @@ public class ItemControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void dummyItem_basic() throws Exception {
+    public void itemFromBusinessService_basic() throws Exception {
         //calling GET /hello-world application/json
-        RequestBuilder request = MockMvcRequestBuilders.get("/dummy-item")
+        RequestBuilder request = MockMvcRequestBuilders.get("/item-from-business-service")
             .accept(MediaType.APPLICATION_JSON);
         ResultMatcher ok = MockMvcResultMatchers.status()
                                             .isOk();
         // ResultMatcher content = MockMvcResultMatchers.content()
         //     .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
         ResultMatcher content = MockMvcResultMatchers.content()
-            .json("{\"id\":1,\"name\":\"Ball\",\"price\":10}");
+            .json("{id:1,name:Ball,price:10}");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
