@@ -3,8 +3,6 @@ package com.codewizard.unittesttutorial.Controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.regex.MatchResult;
 
-import com.codewizard.unittesttutorial.HelloWorldController;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.engine.TestExecutionResult.Status;
