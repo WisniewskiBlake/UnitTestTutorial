@@ -1,5 +1,6 @@
 package com.codewizard.unittesttutorial;
 
+import com.codewizard.unittesttutorial.Business.ItemBusinessService;
 import com.codewizard.unittesttutorial.Model.Item;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemController {
 
     @Autowired
-    ItemBusinessService businessService;
+    private ItemBusinessService businessService;
 
     @GetMapping("/dummy-item")
     public Item dummyItem() {
