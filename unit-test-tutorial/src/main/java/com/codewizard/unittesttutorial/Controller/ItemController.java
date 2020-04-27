@@ -1,4 +1,4 @@
-package com.codewizard.unittesttutorial;
+package com.codewizard.unittesttutorial.Controller;
 
 import com.codewizard.unittesttutorial.Business.ItemBusinessService;
 import com.codewizard.unittesttutorial.Model.Item;
