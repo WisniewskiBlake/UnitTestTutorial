@@ -35,8 +35,10 @@ public class ItemBusinessServiceTest {
     @Test
     public void calculateSumUsingDataService_basic() {
         when(repository.findAll()).thenReturn(Arrays.asList(new Item(2,"Item2",10,10)),
-        Arrays.asList(new Item(3,"Item3",20,30)));
+        Arrays.asList(new Item(3,"Item3",20,20)));
         List<Item> items = business.retrieveAllItems();
+        assertEquals(100, items.get(0).getValue());
+        assertEquals(400, items.get(1).getValue());
     }
     
     
