@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 
 import com.codewizard.unittesttutorial.Business.ItemBusinessService;
 import com.codewizard.unittesttutorial.Business.SomeBusinessImpl;
+import com.codewizard.unittesttutorial.Data.ItemRepository;
 import com.codewizard.unittesttutorial.Data.SomeDataService;
 
 import org.junit.jupiter.api.Test;
@@ -22,14 +23,14 @@ import org.mockito.Mock;
 public class ItemBusinessServiceTest {
 
     @InjectMocks
-    ItemBusinessService business;
+    private ItemBusinessService business;
 
     @Mock
-    SomeDataService dataServiceMock;
+    private ItemRepository repository;
 
     @Test
     public void calculateSumUsingDataService_basic() {
-        when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 1, 2, 3});
+        when(repository.retrieveAllData()).thenReturn(new int[] { 1, 2, 3});
     }
     
     
