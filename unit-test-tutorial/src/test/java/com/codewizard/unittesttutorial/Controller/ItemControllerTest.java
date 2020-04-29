@@ -75,7 +75,7 @@ public class ItemControllerTest {
         // ResultMatcher content = MockMvcResultMatchers.content()
         //     .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
         ResultMatcher content = MockMvcResultMatchers.content()
-            .json("[{id:2,name:Item2,price:10},{id:4,name:Item4,price:40}]");
+            .json("[{id:2,name:Item2,price:10},{id:3,name:Item3,price:20}]");
         MvcResult result = (MvcResult) mockMvc.perform(request)
             .andExpect(ok)
             .andExpect(content)
