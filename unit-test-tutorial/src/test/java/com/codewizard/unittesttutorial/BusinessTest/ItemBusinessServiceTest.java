@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
+import java.util.List;
 
 import com.codewizard.unittesttutorial.Business.ItemBusinessService;
 import com.codewizard.unittesttutorial.Business.SomeBusinessImpl;
@@ -35,6 +36,7 @@ public class ItemBusinessServiceTest {
     public void calculateSumUsingDataService_basic() {
         when(repository.findAll()).thenReturn(Arrays.asList(new Item(2,"Item2",10,10)),
         Arrays.asList(new Item(3,"Item3",20,30)));
+        List<Item> items = business.retrieveAllItems();
     }
     
     
