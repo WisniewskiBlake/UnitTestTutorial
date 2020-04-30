@@ -64,8 +64,8 @@ public class ItemControllerTest {
     public void retrieveAllItems_basic() throws Exception {
         
         when(businessService.retrieveAllItems()).thenReturn(
-                Arrays.asList(new Item(2,"Item2",10,10)),
-                Arrays.asList(new Item(3,"Item3",20,30))
+                Arrays.asList(new Item(2,"Item2",10,10),
+                            new Item(3,"Item3",20,30))
         );
 
         RequestBuilder request = MockMvcRequestBuilders.get("/item-from-business-service")

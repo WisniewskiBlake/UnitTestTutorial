@@ -17,7 +17,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import org.mockito.junit.jupiter.MockitoExtension;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
@@ -32,6 +37,9 @@ public class ItemBusinessServiceTest {
     @Mock
     private ItemRepository repository;
 
+    @Autowired
+    MockMvc mockMvc;
+
     @Test
     public void retrieveAllItems_basic() {
         when(repository.findAll()).thenReturn(Arrays.asList(new Item(2,"Item2",10,10)),
@@ -39,6 +47,21 @@ public class ItemBusinessServiceTest {
         List<Item> items = business.retrieveAllItems();
         assertEquals(100, items.get(0).getValue());
         assertEquals(400, items.get(1).getValue());
+    }
+
+    @Test
+    public void returnUserItems_Test() throws Exception {
+        //call "/return-item"
+        RequestBuilder request = MockMvcRequestBuilders.get("/return-item").accept(MediaType.APPLICATION_JSON);
+
+        MvcResult actualResult = mockMvc.perform(request).andReturn();
+        String expectedResult = "{id:1, name: Laptop, price: 10, quantity: 100}";
+        
+        //verify our result
+        assertEquals(expectedResult, actualResult.getResponse().getContentAsString(), false);
+
+        assertThat();
+
     }
     
     
