@@ -33,7 +33,7 @@ public class ItemBusinessServiceTest {
     private ItemRepository repository;
 
     @Test
-    public void calculateSumUsingDataService_basic() {
+    public void retrieveAllItems_basic() {
         when(repository.findAll()).thenReturn(Arrays.asList(new Item(2,"Item2",10,10)),
         Arrays.asList(new Item(3,"Item3",20,20)));
         List<Item> items = business.retrieveAllItems();
