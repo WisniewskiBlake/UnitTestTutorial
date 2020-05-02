@@ -41,6 +41,10 @@ public class JSONPath {
                 "  {id: 10004, name: \"Unit Tests\", quantity: 5246}" +
                 "]";
 
+        DocumentContext context = JsonPath.parse(responseFromServer);
+        int length = context.read("$.length()");
+        assertThat(length).isEqualTo(3);
+
     }
 
 }
