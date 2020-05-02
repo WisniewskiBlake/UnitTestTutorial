@@ -40,6 +40,12 @@ public class AssertJ {
         assertThat(numbers).allMatch(x -> x > 10);
         assertThat(numbers).allMatch(x -> x < 100);
 
+        assertThat(numbers)
+                .hasSize(3)
+                .contains(12, 15)
+                .allMatch(x -> x > 10)
+                .allMatch(x -> x < 100);
+
     }
 
 }
