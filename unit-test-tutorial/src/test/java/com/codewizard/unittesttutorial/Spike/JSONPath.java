@@ -45,6 +45,9 @@ public class JSONPath {
         int length = context.read("$.length()");
         assertThat(length).isEqualTo(3);
 
+        List<Integer> ids = context.read("$..id");
+        assertThat(ids).containsExactly(10001, 10002, 10003, 10004);
+
     }
 
 }
