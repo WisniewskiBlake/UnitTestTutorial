@@ -46,6 +46,13 @@ public class AssertJ {
                 .allMatch(x -> x > 10)
                 .allMatch(x -> x < 100);
 
+        assertThat("ABCDE").contains("BCD");
+        assertThat("ABCDE").startsWith("ABC");
+
+        assertThat("ABCDE")
+                .contains("BCD")
+                .startsWith("ABC");
+
     }
 
 }
