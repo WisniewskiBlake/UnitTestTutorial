@@ -65,7 +65,7 @@ public class ItemBusinessServiceTest {
 
     @Test
     public void calculateSumUsingDataService_empty() throws Exception {
-        when(repository.retrieveAllData()).thenReturn(new int[] {});
+        //when(repository.retrieveAllData()).thenReturn(new int[] {});
 
     }
 
