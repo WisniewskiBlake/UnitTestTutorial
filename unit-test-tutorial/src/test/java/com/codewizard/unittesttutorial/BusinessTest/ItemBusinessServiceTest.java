@@ -65,16 +65,14 @@ public class ItemBusinessServiceTest {
 
     @Test
     public void calculateSumUsingDataService_empty() throws Exception {
-        //call "/return-item"
-        RequestBuilder request = MockMvcRequestBuilders.get("/return-item").accept(MediaType.APPLICATION_JSON);
+        when(repository.retrieveAllData()).thenReturn(new int[] {});
 
-        MvcResult actualResult = mockMvc.perform(request).andReturn();
-        String expectedResult = "{id:1, name: Laptop, price: 10, quantity: 100}";
-        
-        //verify our result
-        // assertEquals(expectedResult, actualResult.getResponse().getContentAsString(), false);
+    }
 
-        // assertThat();
+    @Test
+    public void calculateSumUsingDataService_oneVal() throws Exception {
+        when(repository.retrieveAllData()).thenReturn(new int[] {});
+
     }
     
     
