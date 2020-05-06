@@ -70,16 +70,12 @@ public class ItemControllerTest {
 
         RequestBuilder request = MockMvcRequestBuilders.get("/item-from-business-service")
             .accept(MediaType.APPLICATION_JSON);
-        ResultMatcher ok = MockMvcResultMatchers.status()
-                                            .isOk();
-        // ResultMatcher content = MockMvcResultMatchers.content()
-        //     .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
-        ResultMatcher content = MockMvcResultMatchers.content()
-            .json("[{id:2,name:Item2,price:10},{id:3,name:Item3,price:20}]");
+
         MvcResult result = (MvcResult) mockMvc.perform(request)
-            .andExpect(ok)
-            .andExpect(content)
-            .andReturn();
+        .andReturn();
+        
+        String expected = "[{id:2,name:Item2,price:10},{id:3,name:Item3,price:20}]";
+        
         
         
         //verifying "Hello World"
