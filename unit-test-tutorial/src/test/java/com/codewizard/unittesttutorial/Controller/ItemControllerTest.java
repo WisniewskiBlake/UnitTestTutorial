@@ -35,31 +35,7 @@ public class ItemControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void itemFromBusinessService_basic() throws Exception {
-        
-        when(businessService.retreiveHardcodedItem()).thenReturn(
-                new Item(2,"Item2",10,10)
-        );
-
-        RequestBuilder request = MockMvcRequestBuilders.get("/item-from-business-service")
-            .accept(MediaType.APPLICATION_JSON);
-        ResultMatcher ok = MockMvcResultMatchers.status()
-                                            .isOk();
-        // ResultMatcher content = MockMvcResultMatchers.content()
-        //     .json("{\"id\":1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}");
-        ResultMatcher content = MockMvcResultMatchers.content()
-            .json("{id:2,name:Item2,price:10}");
-        MvcResult result = (MvcResult) mockMvc.perform(request)
-            .andExpect(ok)
-            .andExpect(content)
-            .andReturn();
-        
-        
-        //verifying "Hello World"
-        // assertEquals("Hello World", result.getResponse().getContentAsString());
-    }
-
+    
     @Test
     public void retrieveAllItems_basic() throws Exception {
         
