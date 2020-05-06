@@ -14,9 +14,7 @@ public class ItemBusinessService {
     @Autowired
     private ItemRepository repository;
 
-    public Item retreiveHardcodedItem() {
-        return new Item(1, "Ball", 10, 100);
-    }
+    
 
     public List<Item> retrieveAllItems() {
         List<Item> items = repository.findAll();

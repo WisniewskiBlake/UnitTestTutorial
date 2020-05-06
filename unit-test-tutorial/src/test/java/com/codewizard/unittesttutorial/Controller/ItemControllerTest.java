@@ -79,7 +79,7 @@ public class ItemControllerTest {
         
         
         //verifying "Hello World"
-        // assertEquals("Hello World", result.getResponse().getContentAsString());
+         assertEquals(expected, result.getResponse().getContentAsString());
     }
 
 }
